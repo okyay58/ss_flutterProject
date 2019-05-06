@@ -1,4 +1,4 @@
-# sosyal_sehir
+# ss
 
 A new Flutter project.
 
