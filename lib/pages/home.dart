@@ -42,12 +42,19 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
   void getNextCard() {
     print("object");
     animationController.reverse();
+    print(animation.status);
+
+    animation.addListener(() {
+      if (animation.status == AnimationStatus.completed ||
+          animation.status == AnimationStatus.dismissed)
+        animationController.forward();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    // print(MediaQuery.of(context).size.width);
     return Layout(
+      selectedPage: 1,
       child: Center(
         child: Container(
           decoration: BoxDecoration(
@@ -70,15 +77,25 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
               ),
               Expanded(
                 flex: 7,
-                child: Transform(
-                  transform: Matrix4.translationValues(
-                      animation.value * MediaQuery.of(context).size.width,
-                      0.0,
-                      0.0),
-                  child: NewsCard(
-                    getNextCard: getNextCard,
-                    withButtons: true,
-                  ),
+                child: Stack(
+                  children: [1, 2, 3, 4, 5].map(
+                    (i) {
+                      return Positioned(
+                        // top: (i).toDouble(),
+                        child: Transform(
+                          transform: Matrix4.translationValues(
+                              animation.value *
+                                  MediaQuery.of(context).size.width,
+                              0.0,
+                              0.0),
+                          child: NewsCard(
+                            getNextCard: getNextCard,
+                            withButtons: true,
+                          ),
+                        ),
+                      );
+                    },
+                  ).toList(),
                 ),
               ),
             ],

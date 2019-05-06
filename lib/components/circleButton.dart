@@ -13,7 +13,7 @@ class CircleButton extends StatefulWidget {
       {Key key,
       this.color,
       this.icon,
-      this.size,
+      this.size = 1.0, // boş geçilirse default atıyor mu acaba???
       this.width,
       this.height,
       this.onTap})

@@ -6,6 +6,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Layout(
+      selectedPage: 0,
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -92,13 +93,13 @@ class Login extends StatelessWidget {
                     height: 45,
                     color: Color(0xFF000000),
                     child: SocialButton(type: "twitter"),
-                  ), 
+                  ),
                   Container(
                     width: 300,
                     height: 45,
                     color: Color(0xFFE4E6EB),
                     child: SocialButton(type: "google"),
-                  ), 
+                  ),
                 ],
               ),
             )

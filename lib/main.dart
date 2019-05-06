@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.black,
-        accentColor: Colors.white,
+        accentColor: Colors.black,
       ),
       routes: {
         // '/': (BuildContext context) => Login(),

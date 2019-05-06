@@ -15,10 +15,22 @@ class NewsCard extends StatefulWidget {
 
 class _NewsCardState extends State<NewsCard> {
   void _onTap(param) {
-
-    widget.getNextCard();
+    // widget.getNextCard();
     // print("aha "+ param);
     // print(param);
+    switch (param) {
+      case 0: // comment
+
+        break;
+      case 1: // unlike
+        break;
+      case 2: // like
+        break;
+      case 3: // read more
+
+        break;
+      default:
+    }
   }
 
   @override
@@ -78,7 +90,33 @@ class _NewsCardState extends State<NewsCard> {
                     fontWeight: FontWeight.w300,
                     color: Color(0xFF657085),
                   ),
-                )
+                ),
+                // SingleChildScrollView(
+                //   child: ConstrainedBox(
+                //     constraints: BoxConstraints(
+                //       minHeight: 240, //viewportConstraints.maxHeight,
+                //     ),
+                //     child: IntrinsicHeight(
+                //       child: Column(
+                //         children: <Widget>[
+                //           Container(
+                //             // A fixed-height child.
+                //             color: Colors.yellow,
+                //             height: 120.0,
+                //           ),
+                //           Expanded(
+                //             // A flexible child that will grow to fit the viewport but
+                //             // still be at least as big as necessary to fit its contents.
+                //             child: Container(
+                //               color: Colors.blue,
+                //               height: 120.0,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -89,7 +127,7 @@ class _NewsCardState extends State<NewsCard> {
               children: <Widget>[
                 CircleButton(
                   onTap: () {
-                    this._onTap(1);
+                    this._onTap(0);
                   },
                   width: 50,
                   height: 50,
@@ -102,7 +140,7 @@ class _NewsCardState extends State<NewsCard> {
                 ),
                 CircleButton(
                   onTap: () {
-                    this._onTap(2);
+                    this._onTap(1);
                   },
                   width: 70,
                   height: 70,
@@ -115,7 +153,7 @@ class _NewsCardState extends State<NewsCard> {
                 ),
                 CircleButton(
                   onTap: () {
-                    this._onTap(3);
+                    this._onTap(2);
                   },
                   width: 70,
                   height: 70,
@@ -128,7 +166,7 @@ class _NewsCardState extends State<NewsCard> {
                 ),
                 CircleButton(
                   onTap: () {
-                    this._onTap(4);
+                    this._onTap(3);
                   },
                   width: 50,
                   height: 50,
